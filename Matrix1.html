@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        function encryption(decrypted_word) {
+            let aphabet = ["а", "б", "в","г", "д", "е","ё", "ж", "з","и", "й", "к","л", "м", "н","о", "п", "р","с", "т", "у","ф", "х", "ц","ч", "ш", "щ","ъ", "ы", "ь","э", "ю", "я"]
+            let encryption_word = ""
+            for (let i = 0; i < decrypted_word.length; i++) {
+                for (let j = 0; j < aphabet.length; j++) {
+                        if ( j < 10 && (String(decrypted_word[i]) == String(aphabet[j]))) {
+                            encryption_word += "0"
+
+                            encryption_word += String(j)
+                            console.log(encryption_word)
+                        }
+                        else if (j >= 10 && (String(decrypted_word[i]) == String(aphabet[j]))) {
+                            encryption_word += String(j)
+                            console.log(encryption_word)
+                        }
+                    }
+                }
+            return encryption_word
+        }
+        
+        const decrypted_word = prompt("Введите слово для шифрования:")
+        
+        const encryption_word = encryption(decrypted_word)
+        alert(encryption_word)
+    </script>
+</body>
+</html>
+
+
